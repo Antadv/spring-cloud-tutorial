@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: api-gateway
+
+server:
+  port: 1101
+
+
+
+#    service-url: http://eureka.didispace.com/eureka/
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka/
