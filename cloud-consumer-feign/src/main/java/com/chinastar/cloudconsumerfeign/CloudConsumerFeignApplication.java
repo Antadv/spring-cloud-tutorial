@@ -11,8 +11,8 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 @SpringBootApplication
 public class CloudConsumerFeignApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(CloudConsumerFeignApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(CloudConsumerFeignApplication.class, args);
+	}
 
 }

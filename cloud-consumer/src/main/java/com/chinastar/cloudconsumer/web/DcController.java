@@ -10,7 +10,7 @@ import javax.annotation.Resource;
 
 /**
  * 消费者
- *
+ * <p>
  * LoadBalancerClient 获取服务提供方
  * RestTemplate 发起接口调用
  *
@@ -19,18 +19,18 @@ import javax.annotation.Resource;
 @RestController
 public class DcController {
 
-    @Resource
-    LoadBalancerClient loadBalancerClient;
+	@Resource
+	LoadBalancerClient loadBalancerClient;
 
-    @Resource
-    private RestTemplate restTemplate;
+	@Resource
+	private RestTemplate restTemplate;
 
-    @GetMapping("/consumer")
-    public String dc() {
-        ServiceInstance serviceInstance = loadBalancerClient.choose("eureka-service");
-        System.out.println(serviceInstance);
-        String url = "http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/dc";
-        System.out.println(url);
-        return restTemplate.getForObject(url, String.class);
-    }
+	@GetMapping("/consumer")
+	public String dc() {
+		ServiceInstance serviceInstance = loadBalancerClient.choose("eureka-service");
+		System.out.println(serviceInstance);
+		String url = "http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/dc";
+		System.out.println(url);
+		return restTemplate.getForObject(url, String.class);
+	}
 }

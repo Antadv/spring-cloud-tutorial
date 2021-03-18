@@ -15,22 +15,22 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class ConsumerService {
 
-    @Resource
-    RestTemplate restTemplate;
+	@Resource
+	RestTemplate restTemplate;
 
-    /**
-     * 服务降级
-     *
-     * HystrixCommand 讲当前方法包装成了 Hystrix 命令
-     * 以来隔离、服务降级在使用时都是一体化实现的
-     */
-    @HystrixCommand(fallbackMethod = "fallback")
-    public String consumer() throws InterruptedException {
-        TimeUnit.SECONDS.sleep(5L);
-        return restTemplate.getForObject("http://eureka-service/dc", String.class);
-    }
+	/**
+	 * 服务降级
+	 * <p>
+	 * HystrixCommand 讲当前方法包装成了 Hystrix 命令
+	 * 以来隔离、服务降级在使用时都是一体化实现的
+	 */
+	@HystrixCommand(fallbackMethod = "fallback")
+	public String consumer() throws InterruptedException {
+		TimeUnit.SECONDS.sleep(5L);
+		return restTemplate.getForObject("http://eureka-service/dc", String.class);
+	}
 
-    private String fallback() {
-        return "fallback";
-    }
+	private String fallback() {
+		return "fallback";
+	}
 }

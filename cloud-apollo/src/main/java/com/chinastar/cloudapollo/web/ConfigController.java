@@ -17,24 +17,24 @@ import javax.annotation.Resource;
 @RequestMapping("/config")
 public class ConfigController {
 
-    @Resource
-    private JavaConfigBean configBean;
-    @Resource
-    private RedisConfig redisConfig;
+	@Resource
+	private JavaConfigBean configBean;
+	@Resource
+	private RedisConfig redisConfig;
 
 
-    @GetMapping("/test")
-    public String test() {
-        return "hello apollo";
-    }
+	@GetMapping("/test")
+	public String test() {
+		return "hello apollo";
+	}
 
-    @GetMapping("/timeout")
-    public String timeout() {
-        return "timeout：" + configBean.getTimeout();
-    }
+	@GetMapping("/timeout")
+	public String timeout() {
+		return "timeout：" + configBean.getTimeout();
+	}
 
-    @GetMapping("/redis")
-    public String redisConfig() {
-        return redisConfig.getExpireSeconds() + ", " + redisConfig.getCommandTimeout();
-    }
+	@GetMapping("/redis")
+	public String redisConfig() {
+		return redisConfig.getExpireSeconds() + ", " + redisConfig.getCommandTimeout();
+	}
 }

@@ -14,11 +14,11 @@ import javax.annotation.Resource;
 @RestController
 public class DcController {
 
-    @Resource
-    private ConsumerService consumerService;
+	@Resource
+	private ConsumerService consumerService;
 
-    @GetMapping("/consumer")
-    public String dc() throws InterruptedException {
-        return consumerService.consumer();
-    }
+	@GetMapping("/consumer")
+	public String dc() throws InterruptedException {
+		return consumerService.consumer();
+	}
 }

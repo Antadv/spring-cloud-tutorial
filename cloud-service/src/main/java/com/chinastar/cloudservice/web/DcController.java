@@ -14,15 +14,15 @@ import javax.annotation.Resource;
 @RestController
 public class DcController {
 
-    @Resource
-    private DiscoveryClient discoveryClient;
+	@Resource
+	private DiscoveryClient discoveryClient;
 
-    @GetMapping("/dc")
-    public String dc() {
-        String services = "Services: " + discoveryClient.getServices();
-        System.out.println(services);
-        return services;
-    }
+	@GetMapping("/dc")
+	public String dc() {
+		String services = "Services: " + discoveryClient.getServices();
+		System.out.println(services);
+		return services;
+	}
 
 
 }

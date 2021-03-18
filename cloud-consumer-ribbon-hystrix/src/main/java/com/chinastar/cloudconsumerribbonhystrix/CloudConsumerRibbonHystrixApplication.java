@@ -14,14 +14,14 @@ import org.springframework.web.client.RestTemplate;
 @SpringCloudApplication
 public class CloudConsumerRibbonHystrixApplication {
 
-    @Bean
-    @LoadBalanced
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
+	@Bean
+	@LoadBalanced
+	public RestTemplate restTemplate() {
+		return new RestTemplate();
+	}
 
-    public static void main(String[] args) {
-        SpringApplication.run(CloudConsumerRibbonHystrixApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(CloudConsumerRibbonHystrixApplication.class, args);
+	}
 
 }

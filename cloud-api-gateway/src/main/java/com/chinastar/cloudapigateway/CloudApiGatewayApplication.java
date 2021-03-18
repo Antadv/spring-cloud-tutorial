@@ -10,12 +10,12 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class CloudApiGatewayApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(CloudApiGatewayApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(CloudApiGatewayApplication.class, args);
+	}
 
-    @Bean
-    public AccessFilter accessFilter() {
-        return new AccessFilter();
-    }
+	@Bean
+	public AccessFilter accessFilter() {
+		return new AccessFilter();
+	}
 }

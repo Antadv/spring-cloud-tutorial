@@ -14,11 +14,11 @@ import javax.annotation.Resource;
 @RestController
 public class DcController {
 
-    @Resource
-    private DcClient dcClient;
+	@Resource
+	private DcClient dcClient;
 
-    @GetMapping("/consumer")
-    public String dc() {
-        return dcClient.consumer();
-    }
+	@GetMapping("/consumer")
+	public String dc() {
+		return dcClient.consumer();
+	}
 }

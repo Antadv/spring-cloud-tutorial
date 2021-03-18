@@ -12,22 +12,22 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties(prefix = "redis.cache")
 public class RedisConfig {
 
-    private int expireSeconds;
-    private int commandTimeout;
+	private int expireSeconds;
+	private int commandTimeout;
 
-    public void setExpireSeconds(int expireSeconds) {
-        this.expireSeconds = expireSeconds;
-    }
+	public void setExpireSeconds(int expireSeconds) {
+		this.expireSeconds = expireSeconds;
+	}
 
-    public void setCommandTimeout(int commandTimeout) {
-        this.commandTimeout = commandTimeout;
-    }
+	public void setCommandTimeout(int commandTimeout) {
+		this.commandTimeout = commandTimeout;
+	}
 
-    public int getExpireSeconds() {
-        return expireSeconds;
-    }
+	public int getExpireSeconds() {
+		return expireSeconds;
+	}
 
-    public int getCommandTimeout() {
-        return commandTimeout;
-    }
+	public int getCommandTimeout() {
+		return commandTimeout;
+	}
 }

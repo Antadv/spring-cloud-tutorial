@@ -11,10 +11,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class JavaConfigBean {
 
-    @Value("${timeout:20}")
-    private int timeout;
+	@Value("${timeout:20}")
+	private int timeout;
 
-    public int getTimeout() {
-        return timeout;
-    }
+	public int getTimeout() {
+		return timeout;
+	}
 }
