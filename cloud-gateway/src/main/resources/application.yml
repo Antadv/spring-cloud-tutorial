@@ -1,0 +1,58 @@
+server:
+  port: 3008
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1001/eureka/
+
+spring:
+  application:
+    name: cloud-gateway
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: demo_route
+          uri: http://localhost:2001
+          predicates:
+            - Path=/hello
+#      - id: time_route
+#        uri: http://ityouknow.com
+#        predicates:
+#        - After=2018-01-20T06:06:06+08:00[Asia/Shanghai]
+#        - Before=2018-01-20T06:06:06+08:00[Asia/Shanghai]
+#        - Between=2018-01-20T06:06:06+08:00[Asia/Shanghai], 2019-01-20T06:06:06+08:00[Asia/Shanghai]
+#      - id: cookie_route
+#        uri: http://ityouknow.com
+#        predicates:
+#        - Cookie=ityouknow, kee.e
+#      - id: header_route
+#        uri: http://ityouknow.com
+#        predicates:
+#        - Header=X-Request-Id, \d+
+#      - id: host_route
+#        uri: http://ityouknow.com
+#        predicates:
+#        - Host=**.ityouknow.com
+#      - id: method_route
+#        uri: http://ityouknow.com
+#        predicates:
+#        - Method=GET
+#      - id: host_route
+#        uri: http://ityouknow.com
+#        predicates:
+#        - Path=/foo/{segment}
+#      - id: query_route
+#        uri: http://ityouknow.com
+#        predicates:
+#         - Query=keep, pu.
+#      - id: remoteaddr_route
+#        uri: http://ityouknow.com
+#        predicates:
+#        - RemoteAddr=192.168.126.218/24
+
