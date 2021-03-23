@@ -17,10 +17,13 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-        - id: demo_route
-          uri: http://localhost:2001
+        - id: path_route
+          uri: lb://eureka-service
           predicates:
             - Path=/hello
+            - Method=GET
+          filters:
+            - AddRequestParameter=color, red
 #      - id: time_route
 #        uri: http://ityouknow.com
 #        predicates:

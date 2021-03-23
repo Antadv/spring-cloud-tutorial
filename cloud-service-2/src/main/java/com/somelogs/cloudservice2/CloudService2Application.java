@@ -1,12 +1,13 @@
-package com.somelogs.gateway;
+package com.somelogs.cloudservice2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
 
 @SpringCloudApplication
-public class CloudGatewayApplication {
+public class CloudService2Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CloudGatewayApplication.class, args);
+		SpringApplication.run(CloudService2Application.class, args);
 	}
+
 }
